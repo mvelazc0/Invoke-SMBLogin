@@ -14,7 +14,7 @@
 
 .PARAMETER ComputerName
 
-    A single computer name or ip
+	A single computer name or ip
 	A list of comma separated computer names or ips  
 	A text file of computer names or ips ( one per line )
 	
@@ -58,7 +58,7 @@
 	192.168.1.1  builtin\Administrator Passw0rd1 Failed
 	192.168.1.1  builtin\Administrator Passw0rd2 Failed
 	192.168.1.2  builtin\Administrator Passw0rd1 Failed
-	192.168.1.2  builtin\Administrator Passw0rd1 Success
+	192.168.1.2  builtin\Administrator Passw0rd2 Success
 		
 .EXAMPLE
 
@@ -75,8 +75,8 @@ function Invoke-SMBLogin {
     Param
     (
 		[string]$Domain,
-        [string]$UserName,
-        [string]$Password,
+		[string]$UserName,
+		[string]$Password,
 		[string]$ComputerName
     )
 	$dom="builtin\"
@@ -91,7 +91,7 @@ function Invoke-SMBLogin {
 
 		$ComputerNames = @()
 		$UserNames = @()
-        $Passwords = @()
+		$Passwords = @()
 		$Results = @()
 		
 		if (Test-Path $ComputerName -PathType Leaf)		{
