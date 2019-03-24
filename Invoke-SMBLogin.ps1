@@ -9,7 +9,8 @@
 
 .DESCRIPTION
 
-	The script will attempt to mount the administrative share C$ on a remote host (s) using username & paswword combination (s).
+	The script will attempt to mount the C$ administrative share  on a remote host (s) using username & paswword combination (s).
+	It will interpret the results and print a table of results on the console.
 	
 
 .PARAMETER ComputerName
