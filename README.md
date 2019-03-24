@@ -34,7 +34,7 @@ PS C:\> Invoke-SMBLogin -Domain lab.org -ComputerName AnyDomainHost -UserName us
 
 ## Using Invoke-SMBLogin with Powershell Empire ##
 
-To use Invoke-SMBLogin from a Powershell Empire agent, have have to copy the Powershell script and the Empire module python script to the Empire folder:
+To use Invoke-SMBLogin from a Powershell Empire agent, you have to copy the Powershell script and the Empire module python script to the Empire folder:
 
 - Invoke-SMBLogin.ps1 to **data/module_source/situational_awareness/network/**
 - smblogin.py to **lib/modules/powershell/situational_awareness/network/**
