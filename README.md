@@ -1,6 +1,9 @@
 # Invoke-SMBLogin #
 Validates username &amp; password combination(s) across a host or group of hosts using the SMB protocol.
 
+The script will attempt to mount the C$ administrative share  on a remote host (s) using a username & password combination (s).
+It will interpret the results of the attempt and print a table on the console with the results.
+
 ## Examples ##
 
 Depending on the type of parameter ( a single item, comma separated items or a text file ) the script will run through all the iterations.
