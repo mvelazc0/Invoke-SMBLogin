@@ -25,6 +25,12 @@
 	Optional
 	Domain to use. If not defined, local account authentication events will be generated (builtin\).
 	
+
+.PARAMETER Sleep
+
+	Optional
+	Time to sleep between each authentication attempt.
+	
 	
 .PARAMETER UserName
 
@@ -78,11 +84,15 @@ function Invoke-SMBLogin {
 		[string]$Domain,
 		[string]$UserName,
 		[string]$Password,
-		[string]$ComputerName
+		[string]$ComputerName,
+		[int]$Sleep
     )
 	$dom="builtin\"
 	if ($Domain){
 		$dom=$Domain+ '\'
+	}
+	if (!$Sleep){
+		$Sleep = 0
 	}
     if (!($UserName) -or !($Password) -or !($ComputerName)) {
         Write-Warning 'Invoke-SMBLogin: Please specify the $UserName, $Password and $ComputerName parameters.'
@@ -195,6 +205,12 @@ function Invoke-SMBLogin {
 
 							}
 						}
+						if ($Sleep -gt 0){
+							Write-Verbose "Sleeping $Sleep seconds between each authentication attempt"
+							Start-Sleep -s $Sleep
+							
+						}
+					
 					}
 				}
 			}

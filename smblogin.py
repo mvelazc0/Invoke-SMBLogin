@@ -59,6 +59,11 @@ class Module:
                 'Description': 'A single username or a list of comma separated usernames',
                 'Required': True,
                 'Value': ''
+            },
+			'Sleep': {
+                'Description': 'Time to sleep between each authentication attempt',
+                'Required': False,
+                'Value': ''
             }
         }
 
@@ -98,8 +103,7 @@ class Module:
                 helpers.color("[!] CredID is invalid!")
                 return ""
 
-            (credID, credType, domainName, userName, password, host, os, sid, notes) = \
-            self.mainMenu.credentials.get_credentials(credID)[0]
+            (credID, credType, domainName, userName, password, host, os, sid, notes) = self.mainMenu.credentials.get_credentials(credID)[0]
 
             if domainName != "":
                 self.options["Domain"]['Value'] = str(domainName)
@@ -110,9 +114,8 @@ class Module:
             if password != "":
                 self.options["Password"]['Value'] = password
 
-        if self.options["UserName"]['Value'] == "" or self.options["Password"]['Value'] == "":
-            print
-            helpers.color("[!] Username and password must be specified.")
+        if self.options["UserName"]['Value'] == "" or self.options["Password"]['Value'] == "" or self.options["ComputerName"]['Value'] == "":
+            print helpers.color("[!] ComputerName, Username and Password must be specified.")
 
         scriptEnd += "Invoke-SMBLogin "
 
