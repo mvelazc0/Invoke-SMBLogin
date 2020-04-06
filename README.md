@@ -41,3 +41,9 @@ To use Invoke-SMBLogin from a Powershell Empire agent, you have to copy the Powe
 
 - Invoke-SMBLogin.ps1 to **data/module_source/situational_awareness/network/**
 - smblogin.py to **lib/modules/powershell/situational_awareness/network/**
+
+### Update December 2019
+
+Invoke-SMBLogin was added the the Empire 3.0 project (https://github.com/BC-SECURITY/Empire/) maintained by https://twitter.com/BCSecurity1
+
+
